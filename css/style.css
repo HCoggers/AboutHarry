@@ -1,6 +1,7 @@
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background: ivory;
+    font-size: 32px;
 }
 header {
     color: seashell;
@@ -9,18 +10,30 @@ header {
     padding-top: 10px;
     padding-left: 30px;
     padding-bottom:150px;
-    font-size: 32px;
 }
 h1 {
     font-size: 72px;
     padding-bottom: 30px;
 }
-table{
-    color: slategray;
-    font-size: 32px;
+li{
+    list-style-type: circle;
+    color: slateblue;
 }
-thead {
+.topten {
+    list-style-type: decimal;
+}
+.list{
+    width: 30%;
+    height: 225px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 20px;
+    margin: 1.3%;
+}
+.titles {
     background: silver;
+    color: slategray;
+    padding: 5px 10px;
 }
 td {
     border-top: thick dashed silver;
@@ -30,17 +43,16 @@ td {
     border-right: thick solid silver;
     border-left: thick solid silver;
     padding: 10px;
-}
-div {
-    width:15%;
-    margin: 0 auto;
     color: slateblue;
-    font-size: 32;
+}
+#score {
+    width:15%;
+    color: slateblue;
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
     border: thick dashed silver;
-    border-top: 0;
+    border-top: 0px;
+    margin: 0 auto;
+    padding: 30px 0px;
 }
 #scorestatement{
     font-size: 72px;
