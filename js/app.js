@@ -27,10 +27,11 @@ function yesNoQuestions() {
     if (uresponse.toLowerCase() === ynanswers[i]) {
       score++;
       alert('Good job! Your score is now ' + score + '/7');
-    } else if (uresponse.toLowerCase() !== ynanswers[i]) {
+    } else {
       alert('Not Quite. Your score is ' + score + '/7');
     }
     console.log('Answer', (i + 1), '=', uresponse);
+    document.getElementById([i].toString()).innerHTML = uresponse;
   }
 }
 
