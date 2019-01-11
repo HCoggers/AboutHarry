@@ -1,84 +1,36 @@
 /* eslint-disable no-console */
-/* eslint-disable strict */
 
-// Next Step: Add loops to Y/N questions, to ensure a yes or no answer. also, organize with more white space and comments
 var score = 0;
 
 
-//QUESTION 3
-function question1() {
-  alert('How well do you know me? answer these yes or no questions ');
-  var name = prompt('Is my first name really Harrison? Y/N');
-  console.log('First name:', name);
-
-  if(name.toLowerCase() === 'no' || name.toLowerCase() === 'n'){
-    score = 1;
-    alert('Good job! Your score is now ' + score + '/7');
-  }else{
-    score = 0;
-    alert('Not Quite. Your score is ' + score + '/7');
+//Yes or No Questions
+function yesNoQuestions (){
+  var ynquestions = ['Is my first name really Harrison? Y/N', 'Is tap my favorite style of dance? Y/N', 'Do I like cats better than dogs? Y/N', 'Am I technically a millenial?  Y/N', 'Okay, here\'s an easy one. Do I prefer coffee over tea?'];
+  var ynanswers = ['n', 'n', 'y', 'y', 'y'];
+  var ynresponses = ['n', 'y'];
+  for (i=0; i<5; i++){
+    var uresponse = prompt(ynquestions[i]);
+    while (uresponse !== ynresponses [0] && uresponse !== ynresponses [1]) {
+      switch (uresponse.toLowerCase()) {
+        case 'yes':
+          uresponse = ynresponses[1];
+          break;
+        case 'no':
+          uresponse = ynresponses[0];
+          break;
+        default:
+          uresponse = prompt('Try again with a yes or no answer.')
+          break;
+      }
+    }
+    if (uresponse.toLowerCase() === ynanswers[i]){
+      score++;
+      alert ('Good job! Your score is now ' + score + '/7');
+    } else if (uresponse.toLowerCase() !== ynanswers[i]){
+      alert ('Not Quite. Your score is ' + score + '/7');
+    }
+    console.log('answer', (i + 1), uresponse);
   }
-  console.log('score is:', score, 'out of 7');
-}
-
-
-//QUESTION 2
-function question2() {
-  var dance = prompt('Is tap my favorite style of dance?');
-  console.log('Enjoys Tap:', dance);
-
-  if(dance.toLowerCase() === 'no' || dance.toLowerCase() === 'n'){
-    score++;
-    alert('Well done! Your Score is now ' + score + '/7');
-  }else{
-    alert('Try again. Your score is ' + score + '/7');
-  }
-  console.log('score is:', score, 'out of 7');
-}
-
-
-//QUESTION 3
-function question3() {
-  var pets = prompt('Do I like cats better than dogs?');
-  console.log('Prefers cats:', pets);
-
-  if(pets.toLowerCase() === 'yes' || pets.toLowerCase() === 'y'){
-    score++;
-    alert('Exactly Right! Your Score is now ' + score + '/7');
-  }else{
-    alert('C\'mon, that was an easy one! Your score is ' + score + '/7');
-  }
-  console.log('score is:', score, 'out of 7');
-}
-
-
-//QUESTION 4
-function question4() {
-  var gen = prompt('Am I technically a millenial? #Guessinggame #Nofilter');
-  console.log('Is Millenial:', gen);
-
-  if(gen.toLowerCase() === 'yes' || gen.toLowerCase() === 'y'){
-    score++;
-    alert('You Rock! Your Score is now ' + score + '/7');
-  }else{
-    alert('You\'ll get it next time... Your score is ' + score + '/7');
-  }
-  console.log('score is:', score, 'out of 7');
-}
-
-
-//QUESTION 5
-function question5() {
-  var caffeine = prompt('Okay, here\'s an easy one. Do I prefer coffee over tea?');
-  console.log('Drink preference is:', caffeine);
-
-  if(caffeine.toLowerCase() === 'yes' || caffeine.toLowerCase() === 'y'){
-    score++;
-    alert('I love my bean juice! Your Score is now ' + score + '/7');
-  }else{
-    alert('Tea\'s alright, but not my preference... Your score is ' + score + '/7');
-  }
-  console.log('score is:', score, 'out of 7');
 }
 
 
@@ -148,11 +100,8 @@ function question7() {
 }
 
 //CALL QUESTION FUNCTIONS
-question1();
-question2();
-question3();
-question4();
-question5();
+alert('How well do you know me? answer these questions.');
+yesNoQuestions();
 question6();
 question7();
 
