@@ -2,7 +2,7 @@
 'use strict';
 
 var score = 0;
-
+var user = prompt('Hey there, I\'m Harry. what\'s your name?');
 
 //Yes or No Questions
 function yesNoQuestions() {
@@ -26,7 +26,7 @@ function yesNoQuestions() {
     }
     if (uresponse.toLowerCase() === ynanswers[i]) {
       score++;
-      alert('Good job! Your score is now ' + score + '/7');
+      alert('Good job, ' + user + '! Your score is now ' + score + '/7');
     } else {
       alert('Not Quite. Your score is ' + score + '/7');
     }
@@ -73,7 +73,7 @@ function question6() {
 //QUESTION 7
 function question7() {
   var lizArray = ['chameleon', 'bearded dragon', 'gecko']
-  var lizard = prompt('Last question! My sister owns a menagerie of different reptiles. Can you guess a one kind of lizard that she has? you\'ll get SIX tries this time.');
+  var lizard = prompt('Last question! My sister owns a menagerie of different reptiles. Can you guess one kind of lizard that she has? you\'ll get SIX tries this time.');
 
   if (lizard.toLowerCase() !== lizArray[0] && lizard.toLowerCase() !== lizArray[1] && lizard.toLowerCase() !== lizArray[2]) {
     for (var i = 0; i < 6; i++) {
