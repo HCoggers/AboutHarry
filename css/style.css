@@ -1,4 +1,3 @@
-/* Next Step: This Styling is getting really busy, try to simplify it. A LOT. */
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background: ivory;
@@ -10,16 +9,16 @@ header {
     border: thick dashed silver;
     padding-top: 10px;
     padding-left: 30px;
-    padding-bottom:150px;
+    padding-bottom:75px;
 }
 h1 {
     font-size: 72px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
-li *:last-child{
+li {
     list-style-type: circle;
     color: slateblue;
-    padding-left: 10%;
+    border-top: 2px solid slategray;
 }
 #topten li{
     list-style-type: decimal;
@@ -39,7 +38,7 @@ li *:last-child{
 td {
     border-top: thick dashed silver;
     border-bottom: thick dashed silver;
-    height: 200px;
+    height: 100px;
     width: 20%;
     border-right: thick solid silver;
     border-left: thick solid silver;

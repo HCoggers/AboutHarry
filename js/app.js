@@ -39,18 +39,19 @@ function yesNoQuestions() {
 //QUESTION 6
 function question6() {
   var sugar = prompt('So, now you know I love my coffee, can you guess how many sugars I use? It\'s less than 10, and I\'ll even give you 4 chances!')
+  var sugartrue = Math.floor(Math.random() * 10);
 
-  if (sugar !== 3) {
+  if (sugar !== sugartrue) {
     while (!(sugar < 10) || sugar < 0) {
       sugar = prompt('Please type an integer between 0 and 9.');
     }
     for (var i = 0; i < 3; i++) {
       sugar = parseInt(sugar);
-      if (sugar < 3) {
+      if (sugar < sugartrue) {
         sugar = prompt('More than that.');
-      } else if (sugar > 3) {
+      } else if (sugar > sugartrue) {
         sugar = prompt('Less than that.');
-      } else if (sugar === 3) {
+      } else if (sugar === sugartrue) {
         break;
       } else {
         sugar = prompt('try again');
@@ -61,7 +62,7 @@ function question6() {
 
   console.log('Number of sugars =', sugar);
 
-  if (sugar === 3) {
+  if (sugar === sugartrue) {
     score++;
     alert('You figured it out! Your score is now ' + score + '/7');
   } else {
@@ -94,10 +95,19 @@ function question7() {
   console.log('Type of lizard =', lizard);
 
   if (lizard.toLowerCase() !== lizArray[0] && lizard.toLowerCase() !== lizArray[1] && lizard.toLowerCase() !== lizArray[2]) {
-    alert('She doesn\'t have any of those. your score is ' + score + '/7');
+    if (score < 6){
+      alert('Too bad. She doesn\'t have any of those. Too bad, ' + user + ', you failed the guessing game with a score of: ' + score + '/7');
+    } else {
+      alert('Too bad. She doesn\'t have any of those. But good job, ' + user + '! You still passed the guessing game with a score of: ' + score + '/7')
+    }
+    
   } else {
     score++;
-    alert('She\'s got one of those! Good job! Your score is now ' + score + '/7');
+    if (score > 5){
+      alert('She\'s got one of those! Good job ' + user + '! You passed the guessing game with a score of: ' + score + '/7');
+    } else {
+      alert('She\'s got one of those! Unfortunately, ' + user + ', you still failed the guessing game with a score of: ' + score + '/7');
+    }
   }
 }
 
