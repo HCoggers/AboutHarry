@@ -120,4 +120,5 @@ question7();
 console.log('Final score =', score);
 
 //DISPLAY SCORE ON WEBPAGE
+document.getElementById('username').innerHTML = user + '\'s'
 document.getElementById('scorestatement').innerHTML = score + '/7';
